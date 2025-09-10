@@ -16,6 +16,7 @@ function startGaming(){
     //circlePiece.velX = 10
     aimPiece = new circle(70,0,cv.height,"white",border=5,border_color=false)
     aimBackPiece = new circle(70,0,cv.height,"#00aaff",border=5,border_color=false)
+    targetPiece = new target(500,cv.height-21,100,20)
     //testPiece = new circle(70,100,cv.height-100,"#0088ff",border=5,border_color=false,arc_start=Math.PI,arc_end=3*Math.PI/2)
 }
 var ga = {
@@ -55,6 +56,19 @@ function circle(radius, x, y, color="#66ffcf",border=0,border_color=false,dofill
     }
     this.pieceUpdate()
 }
+function target(x,y=cv.height-1,width=100,height=20,color="#dd5500") {
+    this.x = x
+    this.y = y
+    this.color = color
+    this.velX = 0
+    this.velY = 0
+    this.pieceUpdate = function() {
+        ctx = ga.ctx
+        ctx.fillStyle = color
+        this.x += Math.round(this.velX)
+        ctx.fillRect(this.x,this.y,width,height)
+    }
+}
 function phys_dump(obj) {
     console.log("dump: x "+obj.x+"velX"+obj.velX+" y "+obj.y+" velY "+obj.velY)
 }
@@ -66,7 +80,7 @@ function phys_reset(x=120,y=cv.height-120,obj=circlePiece) {
     enablePhysics = false
 }
 function physics() {
-    circlePiece.velY -= gravPerFrame
+    circlePiece.velY += gravPerFrame
     if (circlePiece.x > cv.width-30) {phys_dump(circlePiece); phys_reset()}
 }
 function update() {
@@ -85,7 +99,7 @@ function update() {
         }
     } //peak direction flipping code
     }
-    if (ga.key == "f" && !enablePhysics) {enablePhysics = true; giveImpulse(aiming,50,circlePiece)}
+    if (ga.key == "f" && !enablePhysics) {enablePhysics = true; giveImpulse(aiming,12,circlePiece)}
     else if (ga.key == "w" && keyCool) {aimUp();keyCool = false}
     else if (ga.key == "s" && keyCool) {aimDown();keyCool = false}
     if (!ga.key) {keyCool = false}
@@ -99,6 +113,7 @@ function update() {
     circlePiece.pieceUpdate()
     aimBackPiece.pieceUpdate()
     aimPiece.pieceUpdate()
+    targetPiece.pieceUpdate()
     //testPiece.pieceUpdate()
 }
 aiming = 2*Math.PI-16*u
@@ -115,7 +130,7 @@ function aimDown() {
 function giveImpulse(angle,impulse,obj=circlePiece) {
     impX = Math.cos(2*Math.PI-angle)*impulse
     console.log("prev velX "+obj.velX+" new "+impX)
-    impY = Math.sin(2*Math.PI-angle)*impulse
+    impY = -Math.sin(2*Math.PI-angle)*impulse
     console.log("prev velY " + obj.velY + " new " + impY + " sin " + Math.sin(2*Math.PI-angle))
     obj.velX += impX
     obj.velY += impY
