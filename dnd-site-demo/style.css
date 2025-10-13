@@ -1,0 +1,46 @@
+.flex-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+#login-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue
+}
+
+.sidebar {
+    text-align: left;
+    justify-content:left;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    justify-self: left;
+    align-self:self-start;
+    text-align:left;
+}
+
+.sidebar a {
+    display:block;
+    padding: 10px;
+}
+
+a.nav-active {
+    background-color: orange;
+}
+
+.story-card {
+    background-color:lightcyan;
+    border-color:cyan;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 6px;
+    padding: 6px
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+}
