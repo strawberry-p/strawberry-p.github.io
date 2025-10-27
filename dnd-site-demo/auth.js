@@ -17,7 +17,7 @@ function ret_auth_values() {
 function kick_url(){
     let url = window.location.pathname
     let wl = window.location //"in" doesn't work in JS apparently
-    if (wl.protocol.includes("file")) {return "file"} //ts local testing is pmo.
+    if (wl.protocol.includes("file") || true) {return "file"} //ts local testing is pmo.
     if (authed && (url.includes("login") || url.includes("register"))) {
         console.log("redirect to "+wl.protocol+wl.hostname+"/campaigns.html")
         window.location.assign(wl.protocol+wl.hostname+"/campaigns.html") //redirect to the campaigns page to be actually useful
@@ -30,4 +30,5 @@ function kick_url(){
 
 
 placeholder()
+
 kick_url()
