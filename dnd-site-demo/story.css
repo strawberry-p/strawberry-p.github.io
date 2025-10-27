@@ -1,0 +1,6 @@
+.main-container {
+    grid-template-columns: 2fr 1fr;
+}
+#characters-container {
+    grid-column: 1 / span 1;
+}

@@ -1,3 +1,18 @@
+:root {
+    --bg-color: #E5E2DC;
+    --light-fill-color: #D7C7C1;
+    --fill-color: #C7B1A8;
+    --border-color: #7A443E;
+    --dark-color: #442622;
+    --link-color: #444022;
+}
+
+body {
+    font-family: Calibri, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+}
+
 .flex-container {
     display: grid;
     justify-content: center;
@@ -5,11 +20,6 @@
     grid-template-rows: 1fr;
 }
 
-#login-container {
-    border-style: solid;
-    border-width: 1px;
-    border-color: blue
-}
 
 .sidebar {
     text-align: left;
@@ -20,7 +30,8 @@
     justify-self: left;
     align-self:self-start;
     text-align:left;
-}
+} /* sidebar and its associated flex-container prob unused
+because i don't even plan on having that many pages for them*/
 
 .sidebar a {
     display:block;
@@ -32,15 +43,44 @@ a.nav-active {
 }
 
 .story-card {
-    background-color:lightcyan;
-    border-color:cyan;
+    background-color: var(--fill-color);
+    border-color: var(--border-color);
     border-style: solid;
     border-width: 3px;
-    border-radius: 6px;
-    padding: 6px
+    border-radius: 12px;
+    padding: 6px;
+    margin: 12px
 }
 
-.list-container {
+#list-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.story-card {
+    width:fit-content;
+    min-width:10rem;
+}
+
+.story-card a {
+    text-decoration: none;
+    color: black;
+} /*should not look like a link*/
+
+.member-count {
+    border: dotted;
+    border-color: var(--border-color);
+    border-radius: 6px;
+    border-width: 2px;
+    padding: 3px;
+    margin-left: 2em; /*visual separation between player character and the member count*/
+}
+
+.label {
+    margin: 5px;
+}
+
+a.link {
+    color: var(--link-color)
 }

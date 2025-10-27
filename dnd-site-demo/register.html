@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" src="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <script src="auth.js"></script>
     <script src="character-inject.js" defer></script>
 </head>
 <body>
 <div class="main-container">
-<div id="login-container">
-    <form method="post" action="/register">
+<div id="login-container" style="text-align: center">
+    <form method="post" action="register">
         <label for="email">Email:</label>
         <br>
         <input id="email" type="email" name="email">
@@ -21,9 +22,9 @@
         <br>
         <input id="password" name="password" type="password">
         <br>
-    <input type="submit" value="Register">
+    <input style="text-align:center" type="submit" value="Register">
     </form>
-    <a href="login.html">Log in</a>
+    <a href="login.html" class="link">Log in</a>
 </div>
 </div>
 </body>
