@@ -4,13 +4,20 @@
     --fill-color: #C7B1A8;
     --border-color: #7A443E;
     --dark-color: #442622;
-    --link-color: #444022;
+    --link-color: #4F8F00;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
     font-family: Calibri, sans-serif;
     background-color: var(--bg-color);
     color: var(--dark-color);
+    margin: 0px;
+}
+.darkmode {
+    background-color: var(--dark-color, #000000);
+    color: var(--bg-color,#ffffff)
 }
 
 .flex-container {
@@ -38,11 +45,7 @@ because i don't even plan on having that many pages for them*/
     padding: 10px;
 }
 
-a.nav-active {
-    background-color: orange;
-}
-
-.story-card {
+.story-card, .character-card {
     background-color: var(--fill-color);
     border-color: var(--border-color);
     border-style: solid;

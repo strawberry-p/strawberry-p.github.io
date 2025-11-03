@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" src="story.css">
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="story.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar/navbar.css">
     <script src="auth.js"></script>
+    <script src="character-placeholder.js" defer></script>
+    <script>const currentPage = "nav-characters"</script>
+    <script src="navbar/navbar.js" defer></script>
+    <script src="character-inject.js" defer></script>
+    <script src="character-effect.js" defer></script>
 </head>
 <body>
 <div class="main-container">
+<nav id="page-nav"></nav>
+<!--
 <aside class="sidebar">
     <ul>
         <li><a href="characters.html">Characters</a>
@@ -15,8 +23,9 @@
         </li>
     </ul>
 </aside>
+-->
 <div id="list-container">
-
+<img src="" id="hover-effect-img">
 </div>
 </div>
 </body>
