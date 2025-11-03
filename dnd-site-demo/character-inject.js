@@ -7,10 +7,10 @@ function inject_character(obj) {
     raceID = strID+"race"
     strLevel = obj.lvl
     divID = strID+"div"
-    listDiv.innerHTML = listDiv.innerHTML + "<div data-img='img/"+obj.race+".png' class='character-card' id='"+divID+"'></div>"
+    listDiv.innerHTML = "<div data-img='img/"+obj.race+".png' class='character-card' id='"+divID+"'></div>"+listDiv.innerHTML
     let div = document.getElementById(divID)
     div.innerHTML = div.innerHTML+"<p id='"+nameID+"'></p>"+"<p><span id='"+raceID+"'></span> <span id='"+classID+"'></span> (lvl "+strLevel+")</p>"
-    if (typeof obj.campaigns[0] != 'undefined') {
+    if (typeof obj.campaigns[0] != 'undefined' && typeof displayCharCampaignLinks != 'undefined' && displayCharCampaignLinks != false) {
     strCampaignLinks = ""
     for (let i=0;i<obj.campaigns.length;i++) {
         let num = obj.campaigns[i][0]

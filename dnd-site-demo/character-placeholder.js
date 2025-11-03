@@ -24,7 +24,7 @@ function char_placeholder() {
 function user_char_placeholder() {
     charList = []
     charList[0] = new Character(3,"Napstablook",["Artificer"],3,"Ghost",20)
-    charList[1] = new Character(0,"Orpheus",["Paladin"],6,"Dinosaur",100)
+    charList[1] = new Character(1,"Orpheus",["Paladin"],6,"Dinosaur",100)
     charList[2] = new Character(4,"Explosions Girlie",["Wizard"],2,"Dragonborn",12)
     charList[1].cantrips = ["Light","Prestidigation"]
     charList[1].sp1 = ["Fireball"]

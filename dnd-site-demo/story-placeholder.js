@@ -13,8 +13,13 @@ class Campaign {
 function story_placeholder() {
     res = []
     res[0] = new Campaign(0,"bleh",3,"Meeple",0,"Barbarian")
-    res[1] = new Campaign(1,"dragoons",5,"Orpheus",1,"Paladin")
+    res[1] = new Campaign(1,"Siege of Zach Latta's left hand",5,"Orpheus",1,"Paladin")
     storyList = res
     return res
+}
+function storypage_placeholder() {
+    storyList = []
+    storyList[0] = new Campaign(1,"Siege of Zach Latta's left hand",5,"Orpheus",1,"Paladin")
+    storyList[0].characterList = charList //story.html loads char placeH before story placeH
 }
 story_placeholder()

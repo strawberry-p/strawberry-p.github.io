@@ -11,8 +11,8 @@ card.addEventListener('mouseenter',()=>{
     hoverImg.style.left = `${floatLeft}px`
     hoverImg.style.opacity = 1
     hoverImg.animate([
-        {transform: 'translate(0,0)', opacity: 1},
-        {transform: 'translate(80vw,0)', opacity: 0}
+        {transform: 'translate(-50vw,0)', opacity: 1},
+        {transform: 'translate(60vw,0)', opacity: 0}
     ],{
         duration: 3000,
         easing: 'ease-in-out',
