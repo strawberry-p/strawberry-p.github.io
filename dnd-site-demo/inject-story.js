@@ -9,7 +9,8 @@ function insert_campaign(obj) {
     memberCountID = strID+"count"
     charClassID = strID+"charclass"
     divID = strID+"div"
-    HTML = "<div class='story-card' id='"+divID+"'><a href='story/"+strID+"'><p class='entitled' style='font-size: 1.1em; text-align: center' id='"+entitledId+"'></p> <p><span id='"+charTextID+"'></span> <span id='"+charClassID+"'></span> <span class='member-count' id='"+memberCountID+"'></span></p></a></div>" //what the helly is this. i hate JS.
+    if (false) {HTML = "<div class='story-card' id='"+divID+"'><a href='story/"+strID+"'><p class='entitled' style='font-size: 1.1em; text-align: center' id='"+entitledId+"'></p> <p><span id='"+charTextID+"'></span> <span id='"+charClassID+"'></span> <span class='member-count' id='"+memberCountID+"'></span></p></a></div>"} //what the helly is this. i hate JS.
+    else {HTML = "<div class='story-card' id='"+divID+"'><a href='story'><p class='entitled' style='font-size: 1.1em; text-align: center' id='"+entitledId+"'></p> <p><span id='"+charTextID+"'></span> <span id='"+charClassID+"'></span> <span class='member-count' id='"+memberCountID+"'></span></p></a></div>"}
     if (true) {console.log(HTML)}
     parentDiv.innerHTML = parentDiv.innerHTML+HTML
     document.getElementById(entitledId).innerText = obj.name
